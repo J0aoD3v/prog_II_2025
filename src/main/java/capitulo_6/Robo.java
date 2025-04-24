@@ -34,6 +34,13 @@ public class Robo {
         posicao.setY(p.getY());
     }
     
+    public boolean colidiu( Robo outroRobo ){
+        if ( this.posicao.getX() == outroRobo.getPosicao().getX()
+             && this.posicao.getY() == outroRobo.getPosicao().getY()){
+            return true;
+        }
+        return false;    
+    }
     
     // Sem parâmetros, volta à posição 0,0
     public void teletransportar(){
