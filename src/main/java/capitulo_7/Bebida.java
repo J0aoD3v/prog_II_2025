@@ -12,12 +12,22 @@ abstract class Bebida {
     public abstract String descricao();
 }
 
-class BebidaAlcoolica extends Bebida {
+interface IBebidaAlcoolica {
+    double getTeorAlcoolico();
+    String descricao();
+}
+
+class BebidaAlcoolica extends Bebida implements IBebidaAlcoolica {
     private final double teorAlcoolico;
 
     public BebidaAlcoolica(String marca, String nome, double teorAlcoolico) {
         super(marca, nome);
         this.teorAlcoolico = teorAlcoolico;
+    }
+
+    @Override
+    public double getTeorAlcoolico() {
+        return teorAlcoolico;
     }
 
     @Override
